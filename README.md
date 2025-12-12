@@ -25,3 +25,4 @@ Verified via Tensor Network simulations (TeNPy/TEBD) using `lazarus_v2.py`.
 * `lazarus_v2.py`: The physics engine (using `physics-tenpy`) for generating the Hamiltonian and running TEBD diagnostics.
 
 * `final_evidence.png`: Plot showing the Imbalance persistence (Heartbeat) and Entanglement growth (Cost).
+
