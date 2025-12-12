@@ -16,9 +16,12 @@ This project implements a 1D Spin Chain with Quasi-Periodic Z-Potentials (Aubry-
 ### Verification Results
 Verified via Tensor Network simulations (TeNPy/TEBD) using `lazarus_v2.py`.
 
+![Verification Plots](final_evidence.png)
+
 1.  **Quantum Verifiability:** The system exhibits robust Many-Body Localization (MBL). The Imbalance parameter $\mathcal{I}(t)$ stabilizes at **~0.87**, providing a high-contrast "Heartbeat" signal for hardware fidelity.
 2.  **Classical Hardness:** Entanglement entropy grows logarithmically ($S \propto \ln t$), forcing the Bond Dimension $\chi$ to scale from 8 to >300. This confirms the regime is non-trivial for classical simulation.
 
 ### Repository Contents
 * `lazarus_v2.py`: The physics engine (using `physics-tenpy`) for generating the Hamiltonian and running TEBD diagnostics.
+
 * `final_evidence.png`: Plot showing the Imbalance persistence (Heartbeat) and Entanglement growth (Cost).
