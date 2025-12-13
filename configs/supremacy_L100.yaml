@@ -1,0 +1,22 @@
+system:
+  L: 100
+  J: 1.0
+  Delta: 2.5
+  W: 2.5
+  beta: 0.618033988
+
+simulation:
+  dt: 0.05
+  steps: 50
+  shots: 10000
+  realizations: 100
+
+hardware:
+  model: "sycamore"
+  mapping_strategy: "snake_path"
+  native_gates: "FSIM"
+  noise: "sycamore_2025"
+
+output:
+  save_path: "./results/supremacy_run/"
+  format: "json"
