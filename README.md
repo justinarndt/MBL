@@ -131,14 +131,25 @@ pip install -r requirements.txt
 python src/main.py --config configs/supremacy_L100.yaml
 ```
 
-## 7. License & Commercial Use
+## 7\. License & Commercial Use
 
-This project is open-source under the CC-BY-NC-ND 4.0 (Creative Commons Attribution-NonCommercial-NoDerivatives) License.
+This project is protected under the **CC-BY-NC-ND 4.0** (Creative Commons Attribution-NonCommercial-NoDerivatives) License.
 
-**Research Use:**  
+Research Use:
+
 Academic and personal research use is permitted and encouraged.
 
-**Commercial Disclaimer:**  
-For enterprise deployment, particularly on processors with $L > 50$, or for integration into automated calibration pipelines (including "Digital Twin" Hamiltonian Learning modules), please contact the author directly.
+Enterprise & Commercial Use:
 
-**Concept & Architecture:** Justin Arndt.
+For enterprise deployment, particularly for:
+
+*   Processors with lattice size $L > 50$
+    
+*   Integration into automated calibration pipelines
+    
+*   Use of the "Digital Twin" Hamiltonian Learning modules
+    
+
+Please refer to COMMERCIAL.md for licensing terms.
+
+**Contact:** Justin Arndt.
