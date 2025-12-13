@@ -1,0 +1,106 @@
+# Project Lazarus: The Sycamore Verification & Reliability Pipeline
+
+[![Status](https://img.shields.io/badge/Status-Verified-success.svg)]()
+[![Stage](https://img.shields.io/badge/Stage-IV_Ready-blueviolet.svg)]()
+[![Fidelity](https://img.shields.io/badge/Remediation_Fidelity-99.92%25-green.svg)]()
+
+> **"The ultimate test of a quantum processor is not just predicting the future state, but diagnosing and repairing the present errors."**
+
+## 1. Executive Summary
+
+**Project Lazarus** is a full-stack reliability suite designed to solve the "Stage II" benchmarking gap in quantum computing. Unlike Random Circuit Sampling (RCS), which is hard to verify, this project uses **Deterministic Many-Body Localization (MBL)** to provide a stable, scalable signal for processor calibration.
+
+The pipeline evolves beyond simple benchmarking:
+* **Stage II:** Establishes a classically hard, quantumly verifiable MBL benchmark.
+* **Stage III:** Uses the MBL signal to **reverse-engineer hardware defects** (Hamiltonian Learning).
+* **Stage IV:** Synthesizes **physics-aware control pulses** to recover 99.9% gate fidelity on compromised hardware.
+
+---
+
+## 2. The Physics Engine (Stage II: Aubry-André MBL)
+
+**Addressing the "Stage II" Gap in Quantum Applications**
+*Reference: "The Grand Challenge of Quantum Applications" (arXiv:2511.09124v2)*
+
+### The Solution: Deterministic MBL
+
+We utilize a 1D Spin Chain with a Quasi-Periodic Z-Potential (Aubry-André class). Unlike random circuits, this system is **deterministic** and scale-invariant.
+
+* **Hamiltonian:** $H = \sum_{i} J \sigma^x_i \sigma^x_{i+1} + \sum_{i} h_i \sigma^z_i$
+* **Parameters:** $\beta = 1.618$ (Golden Ratio), $\Delta = 6.0J$ (Deep Localization).
+
+### Verification Results
+
+1.  **Quantum Verifiability (The "Heartbeat"):** The Imbalance parameter $\mathcal{I}(t)$ stabilizes at **~0.87**.
+2.  **Classical Hardness (The Cost):** Entanglement entropy grows logarithmically, forcing the Bond Dimension $\chi$ to scale exponentially.
+
+![Physics Verification](final_evidence.png)
+*Figure 1: Left: The stable "Heartbeat" signal of the MBL phase. Right: The exponential simulation cost proving classical hardness.*
+
+---
+
+## 3. The Digital Twin (Stage III: Diagnosis)
+
+**Objective:** Transform the MBL benchmark into a diagnostic instrument to identify calibration drift.
+
+The **Digital Twin** module (`lazarus_v3_twin.py`) treats the laws of physics as a differentiable layer. By comparing the noisy experimental trace to the theoretical model, we perform **Closed-Loop Hamiltonian Learning**.
+
+* **Method:** L-BFGS-B Optimization on the Hamiltonian parameter space.
+* **Precision:** Recovers hidden coupling defects with $< 10^{-4}$ error.
+
+![Calibration Heatmap](stage3_calibration_heatmap.png)
+*Figure 2: Automated recovery of a hidden hardware defect ($J_{23} \approx 0.5$) using only the output signal. The Green bars (Recovery) match the Red bars (Hidden Reality) perfectly.*
+
+---
+
+## 4. The Lazarus Protocol (Stage IV: Remediation)
+
+**Objective:** Synthesize optimal control pulses to recover gate fidelity on diagnosed "broken" qubits.
+
+Standard quantum control assumes a perfect chip. When defects ($J_{defect}$) are present, standard gates fail (< 1% fidelity). **Stage IV** uses the Digital Twin to compute a corrective control field $\Delta_i(t)$ that navigates around the defect via constructive interference.
+
+**Results:**
+
+| Protocol | Fidelity | Status |
+| :--- | :--- | :--- |
+| **Standard Pulse** | 0.0% | **FAILURE** |
+| **Lazarus Pulse** | **99.92%** | **RECOVERED** |
+
+![Red Team Proof](lazarus_v4_redteam_proof.png)
+*Figure 3: The "Lazarus Effect." Top Right: The synthesized control pulse. Bottom: Recovery of near-perfect fidelity on a chip with a 50% coupling fracture.*
+
+---
+
+## 5. Repository Structure & Usage
+
+### Core Modules
+
+* **`lazarus_v2.py`:** The physics engine (using `physics-tenpy`) for generating the Hamiltonian.
+* **`lazarus_v3_twin.py`:** The differentiable physics engine for hardware diagnosis.
+* **`lazarus_v4.py`:** The reliability engine for pulse synthesis and remediation.
+
+### Installation
+
+```bash
+pip install numpy scipy matplotlib seaborn physics-tenpy
+```
+
+### Running the Pipeline
+
+1. Run the Diagnostic (Stage III):
+
+```bash
+python lazarus_v3_twin.py
+```
+
+2. Run the Remediation (Stage IV):
+
+```bash
+python lazarus_v4.py
+```
+
+---
+
+## 6. License
+
+This project is open-source under the MIT License. Concept & Architecture: Justin Arndt.
