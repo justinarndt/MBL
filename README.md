@@ -1,5 +1,5 @@
 # ⚠️ PROJECT STATUS: UNIFIED
-**Active development has moved to: [FINAL BOSS (Holo-Neural Architecture)](https://github.com/justinarndt/HoloJAX_SDK.git)**
+**Active development has moved to: [HoloJAX SDK](https://github.com/justinarndt/HoloJAX_SDK.git)**
 
 **This project has been fully unified, expanded, and productionized in the JAX-native HoloJAX SDK.**
 
