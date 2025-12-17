@@ -1,19 +1,17 @@
-# ⚠️ PROJECT STATUS: SUPERSEDED
+# ⚠️ PROJECT STATUS: UNIFIED
+**Active development has moved to: [FINAL BOSS (Holo-Neural Architecture)](https://github.com/justinarndt/HoloJAX_SDK.git)**
 
-**This research repository (Project Lazarus) has concluded.** The investigations here into Many-Body Localization (MBL) and ergodic phase transitions have been operationalized into a active fault-tolerant control architecture. 
+**This project has been fully unified, expanded, and productionized in the JAX-native HoloJAX SDK.**
 
-**Active development has moved to: [FINAL BOSS (Holo-Neural Architecture)](https://github.com/justinarndt/FB.git)**
+The complete, reproducible implementation—integrating Stormbreaker (HDC decoding), Lazarus (Neural ODE drift calibration), and The Fridge (quantum benchmarking)—is now available here:
 
-### 🚀 The Next Evolution: "Holo-Neural" Control
-The new architecture (U.S. Patent App. No. 63/940,641) solves the stability problems identified in this repo by combining **Holographic Error Correction** with **Neural ODE Drift Prediction**.
+→ https://github.com/justinarndt/HoloJAX_SDK
 
-**Verified Benchmarks in the New Repo:**
-* **Volume Law Scaling:** $R^2 = 0.9909$ (Gold Standard FSS verification).
-* **Holographic Robustness:** Decoder maintains **100% accuracy** at 30% syndrome corruption.
-* **Hamiltonian Learning:** Neural ODE predicts future system dynamics ($t=30$) with MAE=0.2537.
-* **Latency:** $<10 \mu s$ (Real-time decoding loop).
+Includes the full whitepaper: "HoloJAX: Breaking the Coherence Barrier" (December 17, 2025)
+Targeted for direct integration with Google Quantum AI's Cirq/Colossus stack on Sycamore & Willow processors.
+Patent Pending (U.S. Prov. App. 63/940,641)
 
-👉 **[Go to the Active Repository](https://github.com/justinarndt/FB.git)**
+👉 **[Go to the Active Repository](https://github.com/justinarndt/HoloJAX_SDK.git)**
 
 # Project Lazarus: The Sycamore Verification & Reliability Pipeline
 
